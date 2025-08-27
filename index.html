@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventario Laboratorio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Formulario de Inventario</h1>
+
+  <form id="pcForm">
+
+    <!-- Laboratorio -->
+    <label>Laboratorio:</label>
+    <select id="laboratorio" required>
+      <option value="">Seleccione...</option>
+      <option value="1">Laboratorio 1</option>
+      <option value="2">Laboratorio 2</option>
+      <option value="3">Laboratorio 3</option>
+    </select>
+
+    <!-- Número de PC -->
+    <label>Número de PC:</label>
+    <input type="number" id="numPC" required placeholder="Ej: 5">
+
+    <h2>Hardware</h2>
+    <label>Placa - Marca:</label>
+    <input type="text" id="placaMarca" required>
+    <label>Placa - Modelo:</label>
+    <input type="text" id="placaModelo" required>
+
+    <label>Procesador - Marca:</label>
+    <input type="text" id="procMarca">
+    <label>Procesador - Modelo:</label>
+    <input type="text" id="procModelo">
+    <label>Procesador - Generación:</label>
+    <input type="text" id="procGen">
+
+    <label>Memoria RAM:</label>
+    <input type="text" id="ramMarca" placeholder="Marca">
+    <input type="text" id="ramVelocidad" placeholder="Velocidad">
+    <input type="text" id="ramTipo" placeholder="DDR3, DDR4, etc.">
+
+    <label>Almacenamiento:</label>
+    <input type="text" id="almTipo" placeholder="HDD/SSD">
+    <input type="text" id="almMarca" placeholder="Marca">
+    <input type="text" id="almCapacidad" placeholder="Capacidad (GB)">
+    <input type="text" id="almFormato" placeholder="2.5, M.2, etc.">
+
+    <label>Case:</label>
+    <input type="text" id="caseMarca" placeholder="Marca">
+    <input type="text" id="caseTipo" placeholder="Tipo">
+    <input type="text" id="casePotencia" placeholder="Potencia (W)">
+
+    <label>Monitor:</label>
+    <input type="text" id="monitorMarca" placeholder="Marca">
+    <input type="text" id="monitorConexion" placeholder="HDMI, VGA, DP">
+    <input type="text" id="monitorTam" placeholder="Tamaño (pulgadas)">
+
+    <label>Teclado:</label>
+    <input type="text" id="tecladoMarca">
+    <input type="text" id="tecladoConexion" placeholder="USB/PS2/Inalámbrico">
+
+    <label>Mouse:</label>
+    <input type="text" id="mouseMarca">
+    <input type="text" id="mouseConexion" placeholder="USB/Inalámbrico">
+
+    <h2>Software</h2>
+    <label>Sistema Operativo:</label>
+    <select id="so">
+      <option value="Windows 10">Windows 10</option>
+      <option value="Windows 10 Pro">Windows 10 Pro</option>
+      <option value="Windows 11">Windows 11</option>
+      <option value="Linux Ubuntu">Linux Ubuntu</option>
+      <option value="Otro">Otro</option>
+    </select>
+
+    <label>Office:</label>
+    <select id="office">
+      <option value="Office 2016">Office 2016</option>
+      <option value="Office 2019">Office 2019</option>
+      <option value="Office 2021">Office 2021</option>
+      <option value="Office 365">Office 365</option>
+    </select>
+
+    <label>Lenguaje de Programación:</label>
+    <select id="lenguaje">
+      <option value="Java">Java</option>
+      <option value="Python">Python</option>
+      <option value="C#">C#</option>
+      <option value="C++">C++</option>
+            <option value="Visual Studio">Visual Studio</option>
+      <option value="Visual Code">Visual Code</option>
+    </select>
+
+    <label>Base de Datos:</label>
+    <select id="bd">
+      <option value="MySQL">MySQL</option>
+      <option value="PostgreSQL">PostgreSQL</option>
+      <option value="SQL Server">SQL Server</option>
+    </select>
+
+    <label>Herramienta CASE:</label>
+    <select id="caseTool">
+      <option value="StarUML">StarUML</option>
+      <option value="Visual Paradigm">Visual Paradigm</option>
+
+    </select>
+
+    <label>Navegador:</label>
+    <select id="navegador">
+      <option value="Chrome">Chrome</option>
+      <option value="Firefox">Firefox</option>
+      <option value="Edge">Edge</option>
+      <option value="Opera">Opera</option>
+    </select>
+
+    <h2>Otros</h2>
+    <label>Estado:</label>
+    <select id="estado">
+      <option value="Operativo">Operativo</option>
+      <option value="Inoperativo">Inoperativo</option>
+    </select>
+
+    <label>Estabilizador:</label>
+    <input type="text" id="estMarca" placeholder="Marca">
+    <input type="text" id="estEntradas" placeholder="Entradas">
+
+    <label>Antivirus:</label>
+    <input type="text" id="avNombre" placeholder="Nombre">
+    <input type="text" id="avVigencia" placeholder="Vigencia (fecha)">
+
+    <label>Internet:</label>
+    <select id="internet">
+      <option value="Cableado">Cableado</option>
+      <option value="Inalámbrico">Inalámbrico</option>
+    </select>
+
+    <br><br>
+    <!-- Botones -->
+    <button type="submit">💾 Guardar PC</button>
+    <button type="button" id="editarPC">✏️ Editar PC</button>
+    <button type="button" id="eliminarPC">🗑️ Eliminar PC</button>
+    <button type="button" id="descargarExcel">📥 Descargar Excel</button>
+
+  </form>
+
+  <!-- SDK Firebase compat -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <!-- Librería para Excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>
